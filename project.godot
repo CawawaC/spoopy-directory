@@ -15,8 +15,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Spoopy Directory temp"
+config/name="Spoopy Directory"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Config="*res://Config.gd"
 
 [rendering]
 

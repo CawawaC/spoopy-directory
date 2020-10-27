@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://explorer/dir.gd" type="Script" id=2]
+[ext_resource path="res://explorer/templates/dir.gd" type="Script" id=2]
+[ext_resource path="res://explorer/templates/actions.gd" type="Script" id=3]
 
 [node name="dir" type="TextureButton"]
 margin_right = 150.0
@@ -38,4 +39,7 @@ size_flags_horizontal = 7
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="actions" type="Node" parent="."]
+script = ExtResource( 3 )
 [connection signal="pressed" from="click area" to="." method="open"]
