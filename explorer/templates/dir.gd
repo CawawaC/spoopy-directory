@@ -1,6 +1,6 @@
 extends Control
 
-onready var label = $label
+onready var label = $vbox/label
 onready var actions = $actions 
 
 var pid
@@ -12,6 +12,7 @@ func _ready():
 	connect("opened", get_parent(), "on_dir_opened")
 
 func open():
+	print("open")
 	emit_signal("opened", pid)
 
 func set_dir_name(value):

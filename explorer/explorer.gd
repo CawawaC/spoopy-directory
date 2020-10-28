@@ -1,55 +1,27 @@
 extends Control
 
-export (PackedScene) var directory_template
-export (PackedScene) var text_file_template
+onready var importer = $"../../importer"
+onready var current_folder = $folder
+onready var grid = $scroll/grid
 
-onready var importer = $"../importer"
-onready var converter = $"../converter"
+var directory_history = []
 
-func init():
-	importer.import()
+func _ready():
+	if not Config.debug:
+		$parent.hide()
+
+func go_to_parent_directory():
+	var parent_dir = directory_history.back()
+	if parent_dir == null:
+		return
 	
-	add_passage_directories()
+	grid.go_to_dir(parent_dir.pid)
+	current_folder.text = parent_dir.name	
+	directory_history.pop_back()
 
-func add_passage_directories(passage = importer.current_passage):
-	var links = importer.get_links()
-	for l in links:
-		var file = add_file(l.pid)
-		file.file_name = l.name
+func on_parent_pressed():
+	go_to_parent_directory()
 
-func add_file(pid):
-	var type = importer.get_passage_type_width_pid(pid)
-	var file
-	
-	match type:
-		importer.FileType.DIRECTORY:
-			file = directory_template.instance()
-			file.pid = pid
-			add_child(file)
-		
-		importer.FileType.TEXT:
-			file = text_file_template.instance()
-			file.pid = pid
-			add_child(file)
-			var text = importer.get_passage_with_pid(pid).text
-			file.calls = converter.get_signal_blocks(text)
-			text = converter.remove_signal_blocks(text)
-			file.text = converter.replace_strings(text)
-	
-	return file
-
-func display_text_file(passage = importer.current_passage):
-	pass
-
-func on_dir_opened(pid):
-	importer.set_current_passage_with_pid(pid)
-	
-	if importer.current_passage_type == importer.FileType.DIRECTORY:
-		clear()
-		add_passage_directories()
-	elif importer.current_passage_type == importer.FileType.TEXT:
-		display_text_file(importer.current_passage)
-
-func clear():
-	for c in get_children():
-		c.queue_free()
+func on_grid_dir_opened(passage):
+	directory_history.append(importer.current_passage)
+	current_folder.text = passage.name

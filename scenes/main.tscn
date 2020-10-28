@@ -1,17 +1,40 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://narrative/scripts/twine importer.gd" type="Script" id=1]
 [ext_resource path="res://explorer/explorer.gd" type="Script" id=2]
 [ext_resource path="res://explorer/templates/dir.tscn" type="PackedScene" id=3]
 [ext_resource path="res://explorer/templates/text.tscn" type="PackedScene" id=4]
 [ext_resource path="res://narrative/scripts/converter.gd" type="Script" id=5]
+[ext_resource path="res://references/spoopy_dir_marges.png" type="Texture" id=6]
+[ext_resource path="res://explorer/themeing/explorer.theme.tres" type="Theme" id=7]
+[ext_resource path="res://explorer/directories.gd" type="Script" id=8]
+[ext_resource path="res://main.gd" type="Script" id=9]
+[ext_resource path="res://assets/graph/foreground.png" type="Texture" id=10]
 
-[node name="Control" type="Control"]
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.180392, 0.184314, 0.207843, 1 )
+
+[node name="Control" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 7 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 9 )
+
+[node name="close" type="Button" parent="."]
+margin_left = 473.0
+margin_right = 502.0
+margin_bottom = 39.0
+text = "X"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="spoopy_dir_marges" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.317647 )
+texture = ExtResource( 6 )
+centered = false
 
 [node name="importer" type="Node" parent="."]
 script = ExtResource( 1 )
@@ -29,29 +52,90 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="explorer" type="GridContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -512.0
-margin_top = -300.0
-margin_right = 512.0
-margin_bottom = 300.0
+[node name="margin" type="MarginContainer" parent="."]
+margin_top = 36.0
+margin_right = 502.0
+margin_bottom = 502.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="explorer" type="Panel" parent="margin"]
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 493.0
+margin_bottom = 457.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="parent" type="Button" parent="margin/explorer"]
+visible = false
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 42.0
+margin_bottom = 36.0
+text = "↑"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="folder" type="Label" parent="margin/explorer"]
+margin_left = 42.0
+margin_right = 445.0
+margin_bottom = 34.0
+text = "root"
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="delimiter" type="ColorRect" parent="margin/explorer"]
+margin_left = 42.0
+margin_top = 34.0
+margin_right = 444.0
+margin_bottom = 36.0
+color = Color( 0.772549, 0.94902, 0.976471, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scroll" type="ScrollContainer" parent="margin/explorer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 42.0
+margin_top = 36.0
+margin_right = -11.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="grid" type="GridContainer" parent="margin/explorer/scroll"]
 grow_horizontal = 2
 grow_vertical = 2
-columns = 5
-script = ExtResource( 2 )
+custom_constants/vseparation = 50
+custom_constants/hseparation = 70
+columns = 3
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 directory_template = ExtResource( 3 )
 text_file_template = ExtResource( 4 )
 
-[node name="parent" type="Button" parent="."]
-visible = false
-margin_right = 12.0
-margin_bottom = 20.0
-text = "parent"
-[connection signal="ready" from="." to="explorer" method="init"]
+[node name="foreground" type="TextureRect" parent="."]
+margin_right = 502.0
+margin_bottom = 502.0
+mouse_filter = 2
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="ready" from="." to="margin/explorer/scroll/grid" method="init"]
+[connection signal="pressed" from="close" to="." method="on_close_pressed"]
 [connection signal="pressed" from="converter/Button" to="converter" method="test"]
+[connection signal="pressed" from="margin/explorer/parent" to="margin/explorer" method="on_parent_pressed"]
+[connection signal="dir_opened" from="margin/explorer/scroll/grid" to="margin/explorer" method="on_grid_dir_opened"]

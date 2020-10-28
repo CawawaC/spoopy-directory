@@ -1,8 +1,7 @@
-extends TextureButton
+extends Control
 
 onready var popup = $popup
-onready var content = $popup/content
-onready var label = $label
+onready var label = $vbox/label
 onready var actions = $actions
 
 var file_name setget set_file_name
@@ -16,7 +15,7 @@ func open():
 		actions.call(c)
 
 func set_text(value):
-	content.text = value
+	popup.text = value
 
 func set_file_name(value):
 	file_name = value

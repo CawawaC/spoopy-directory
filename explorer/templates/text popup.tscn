@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://references/spoopy_dir_02.png" type="Texture" id=1]
+[ext_resource path="res://explorer/themeing/explorer.theme.tres" type="Theme" id=2]
+[ext_resource path="res://explorer/themeing/text content.font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://explorer/templates/text popup.gd" type="Script" id=4]
+[ext_resource path="res://assets/graph/foreground.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+
+[node name="popup" type="Popup"]
+visible = true
+margin_left = 41.6964
+margin_top = 76.4043
+margin_right = 448.696
+margin_bottom = 455.404
+theme = ExtResource( 2 )
+script = ExtResource( 4 )
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.180392, 0.184314, 0.207843, 1 )
+
+[node name="outline" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Control" parent="."]
+margin_left = 15.0
+margin_right = 407.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="filename" type="Label" parent="title"]
+margin_left = 11.0
+margin_top = 2.0
+margin_right = 357.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+text = "File name"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="close" type="Button" parent="title"]
+margin_left = 357.0
+margin_top = 2.0
+margin_right = 390.0
+margin_bottom = 40.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="delimiter" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_left = 16.0
+margin_top = 40.0
+margin_right = -35.0
+margin_bottom = 42.0
+color = Color( 0.772549, 0.94902, 0.976471, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scroll" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 43.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="content" type="Label" parent="scroll"]
+margin_right = 407.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "romgneromeogougushg smoerrighesogsougsuytobg romgneromeogougushg smoerrighesogsougsuytobgromgneromeogougushg smoerrighesogsougsuytobgromgneromeogougushg smoerrighesogsougsuytobgromgneromeogougushg smoerrighesogsougsuytobgromgneromeogougushg smoerrighesogsougsuytobgromgneromeogougushg smoerrighesogsougsuytobgromgneromeogougushg smoerrighesogsougsuytobg"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spoopy_dir_02" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.54902 )
+position = Vector2( 207.438, 173.735 )
+texture = ExtResource( 1 )
+
+[node name="foreground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+[connection signal="pressed" from="title/close" to="." method="on_close_pressed"]
