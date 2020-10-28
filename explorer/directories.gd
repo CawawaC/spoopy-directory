@@ -14,13 +14,14 @@ func init():
 	add_passage_directories()
 
 func add_passage_directories(passage = importer.current_passage):
-	var links = importer.get_links()
+	var links = importer.get_links(passage)
 	for l in links:
 		var file = add_file(l.pid)
 		file.file_name = l.name
 
 func add_file(pid):
 	var type = importer.get_passage_type_width_pid(pid)
+	var passage = importer.get_passage_with_pid(pid)
 	var file
 	
 	match type:
@@ -38,10 +39,10 @@ func add_file(pid):
 			text = converter.remove_signal_blocks(text)
 			file.text = converter.replace_strings(text)
 	
+	if passage.has("tags") and passage.tags.has("hidden"):
+		file.hide()
+	
 	return file
-
-func display_text_file(passage = importer.current_passage):
-	pass
 
 func on_dir_opened(pid):
 	emit_signal("dir_opened", importer.get_passage_with_pid(pid))
@@ -54,8 +55,8 @@ func go_to_dir(pid):
 	if importer.current_passage_type == importer.FileType.DIRECTORY:
 		clear()
 		add_passage_directories()
-	elif importer.current_passage_type == importer.FileType.TEXT:
-		display_text_file(importer.current_passage)
+#	elif importer.current_passage_type == importer.FileType.TEXT:
+#		display_text_file(importer.current_passage)
 
 func clear():
 	for c in get_children():

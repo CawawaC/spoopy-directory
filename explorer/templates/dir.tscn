@@ -6,9 +6,9 @@
 [ext_resource path="res://explorer/themeing/explorer.theme.tres" type="Theme" id=4]
 
 [node name="dir" type="Control"]
-margin_right = 88.0
-margin_bottom = 114.0
-rect_min_size = Vector2( 70, 90 )
+margin_right = 120.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 120, 133 )
 mouse_default_cursor_shape = 2
 theme = ExtResource( 4 )
 script = ExtResource( 2 )
@@ -22,22 +22,20 @@ script = ExtResource( 3 )
 [node name="vbox" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 10.0
-margin_right = 30.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="icon" type="TextureRect" parent="vbox"]
 modulate = Color( 0.772549, 0.94902, 0.976471, 1 )
-margin_right = 118.0
+margin_right = 120.0
 margin_bottom = 54.0
 texture = ExtResource( 1 )
 stretch_mode = 4
 
 [node name="label" type="Label" parent="vbox"]
 margin_top = 58.0
-margin_right = 118.0
+margin_right = 120.0
 margin_bottom = 81.0
 text = "dir name"
 align = 1
@@ -49,7 +47,6 @@ __meta__ = {
 [node name="click area" type="TextureButton" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 28.0
 size_flags_horizontal = 7
 __meta__ = {
 "_edit_use_anchors_": false

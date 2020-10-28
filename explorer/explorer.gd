@@ -11,6 +11,9 @@ func _ready():
 		$parent.hide()
 
 func go_to_parent_directory():
+	if directory_history.size() == 0:
+		return
+	
 	var parent_dir = directory_history.back()
 	if parent_dir == null:
 		return
