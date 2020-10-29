@@ -17,6 +17,7 @@ func add_passage_directories(passage = importer.current_passage):
 	var links = importer.get_links(passage)
 	for l in links:
 		var file = add_file(l.pid)
+		l.name = converter.replace_strings(l.name)
 		file.file_name = l.name
 
 func add_file(pid):
@@ -34,18 +35,23 @@ func add_file(pid):
 			file = text_file_template.instance()
 			file.pid = pid
 			add_child(file)
+			
 			var text = importer.get_passage_with_pid(pid).text
 			file.calls = converter.get_signal_blocks(text)
 			text = converter.remove_signal_blocks(text)
-			file.text = converter.replace_strings(text)
+			text = converter.replace_strings(text)
+			file.text = text
 	
 	if passage.has("tags") and passage.tags.has("hidden"):
 		file.hide()
 	
 	return file
 
-func on_dir_opened(pid):
-	emit_signal("dir_opened", importer.get_passage_with_pid(pid))
+func on_dir_opened(pid, dir_name):
+	dir_name = converter.replace_strings(dir_name)
+	var passage = importer.get_passage_with_pid(pid)
+	passage.name = dir_name
+	emit_signal("dir_opened", passage)
 	
 	go_to_dir(pid)
 

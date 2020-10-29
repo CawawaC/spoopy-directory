@@ -29,6 +29,7 @@ window/size/width=500
 window/size/height=500
 window/size/resizable=false
 window/size/always_on_top=true
+mouse_cursor/custom_image="res://assets/graph/cursor.png"
 
 [rendering]
 

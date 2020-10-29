@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://explorer/themeing/explorer.theme.tres" type="Theme" id=1]
+[ext_resource path="res://narrative/scripts/converter.gd" type="Script" id=2]
+[ext_resource path="res://narrative/scripts/twine importer.gd" type="Script" id=3]
+[ext_resource path="res://narrative/titles/titles.gd" type="Script" id=4]
+
+[node name="titles" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="title" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 50.0
+margin_right = -20.0
+margin_bottom = -50.0
+theme = ExtResource( 1 )
+text = "gerhstrs"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="importer" type="Node" parent="."]
+script = ExtResource( 3 )
+file_path = "res://narrative/sources/intro.json"
+
+[node name="converter" type="Node" parent="."]
+script = ExtResource( 2 )

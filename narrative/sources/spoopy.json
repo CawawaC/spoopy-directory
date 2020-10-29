@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "[[logs->archives]]\n[[project information]]",
+      "text": "[[logs->archives]]\n[[project information]]\n\n[[==player==?]]",
       "links": [
         {
           "name": "logs",
@@ -12,13 +12,18 @@
           "name": "project information",
           "link": "project information",
           "pid": "5"
+        },
+        {
+          "name": "==player==?",
+          "link": "==player==?",
+          "pid": "13"
         }
       ],
       "name": "dir",
       "pid": "1",
       "position": {
-        "x": "368.3333333333333",
-        "y": "403.3333333333333"
+        "x": "368",
+        "y": "403"
       }
     },
     {
@@ -60,7 +65,7 @@
       "pid": "4",
       "position": {
         "x": "900",
-        "y": "525"
+        "y": "523"
       },
       "tags": [
         "executable"
@@ -79,7 +84,7 @@
       "pid": "5",
       "position": {
         "x": "620",
-        "y": "733.3333333333333"
+        "y": "733"
       },
       "tags": [
         "hidden"
@@ -90,9 +95,535 @@
       "name": "b727-ghf92",
       "pid": "6",
       "position": {
-        "x": "826.6666666666667",
-        "y": "736.6666666666666"
+        "x": "826",
+        "y": "736"
       }
+    },
+    {
+      "text": "[[are]]",
+      "links": [
+        {
+          "name": "are",
+          "link": "are",
+          "pid": "8"
+        }
+      ],
+      "name": "what",
+      "pid": "7",
+      "position": {
+        "x": "595",
+        "y": "989"
+      }
+    },
+    {
+      "text": "[[you]]",
+      "links": [
+        {
+          "name": "you",
+          "link": "you",
+          "pid": "9"
+        }
+      ],
+      "name": "are",
+      "pid": "8",
+      "position": {
+        "x": "747",
+        "y": "992"
+      }
+    },
+    {
+      "text": "[[doing]]",
+      "links": [
+        {
+          "name": "doing",
+          "link": "doing",
+          "pid": "10"
+        }
+      ],
+      "name": "you",
+      "pid": "9",
+      "position": {
+        "x": "884",
+        "y": "1004"
+      }
+    },
+    {
+      "text": "[[here?]]",
+      "links": [
+        {
+          "name": "here?",
+          "link": "here?",
+          "pid": "11"
+        }
+      ],
+      "name": "doing",
+      "pid": "10",
+      "position": {
+        "x": "1027",
+        "y": "996"
+      }
+    },
+    {
+      "text": "Double-click this passage to edit it.",
+      "name": "here?",
+      "pid": "11",
+      "position": {
+        "x": "1174",
+        "y": "1012"
+      }
+    },
+    {
+      "text": "Double-click this passage to edit it.",
+      "name": "Passage sans titre",
+      "pid": "12",
+      "position": {
+        "x": "1441",
+        "y": "781"
+      }
+    },
+    {
+      "text": "[[is]]",
+      "links": [
+        {
+          "name": "is",
+          "link": "is",
+          "pid": "14"
+        }
+      ],
+      "name": "==player==?",
+      "pid": "13",
+      "position": {
+        "x": "584",
+        "y": "1153"
+      }
+    },
+    {
+      "text": "[[that]]",
+      "links": [
+        {
+          "name": "that",
+          "link": "that",
+          "pid": "15"
+        }
+      ],
+      "name": "is",
+      "pid": "14",
+      "position": {
+        "x": "744",
+        "y": "1160"
+      }
+    },
+    {
+      "text": "[[you?]]",
+      "links": [
+        {
+          "name": "you?",
+          "link": "you?",
+          "pid": "16"
+        }
+      ],
+      "name": "that",
+      "pid": "15",
+      "position": {
+        "x": "902",
+        "y": "1163"
+      }
+    },
+    {
+      "text": "[[Grandpa!]]",
+      "links": [
+        {
+          "name": "Grandpa!",
+          "link": "Grandpa!",
+          "pid": "17"
+        }
+      ],
+      "name": "you?",
+      "pid": "16",
+      "position": {
+        "x": "1084",
+        "y": "1162"
+      }
+    },
+    {
+      "text": "[[Yes]]",
+      "links": [
+        {
+          "name": "Yes",
+          "link": "Yes",
+          "pid": "18"
+        }
+      ],
+      "name": "Grandpa!",
+      "pid": "17",
+      "position": {
+        "x": "540",
+        "y": "1330"
+      }
+    },
+    {
+      "text": "[[I]]",
+      "links": [
+        {
+          "name": "I",
+          "link": "I",
+          "pid": "19"
+        }
+      ],
+      "name": "Yes",
+      "pid": "18",
+      "position": {
+        "x": "547",
+        "y": "1454"
+      }
+    },
+    {
+      "text": "[[uploaded]]",
+      "links": [
+        {
+          "name": "uploaded",
+          "link": "uploaded",
+          "pid": "20"
+        }
+      ],
+      "name": "I",
+      "pid": "19",
+      "position": {
+        "x": "707",
+        "y": "1457"
+      }
+    },
+    {
+      "text": "[[my]]",
+      "links": [
+        {
+          "name": "my",
+          "link": "my",
+          "pid": "21"
+        }
+      ],
+      "name": "uploaded",
+      "pid": "20",
+      "position": {
+        "x": "844",
+        "y": "1463"
+      }
+    },
+    {
+      "text": "[[consciousness]]",
+      "links": [
+        {
+          "name": "consciousness",
+          "link": "consciousness",
+          "pid": "22"
+        }
+      ],
+      "name": "my",
+      "pid": "21",
+      "position": {
+        "x": "976",
+        "y": "1491"
+      }
+    },
+    {
+      "text": "[[to]]",
+      "links": [
+        {
+          "name": "to",
+          "link": "to",
+          "pid": "23"
+        }
+      ],
+      "name": "consciousness",
+      "pid": "22",
+      "position": {
+        "x": "1127",
+        "y": "1466"
+      }
+    },
+    {
+      "text": "[[this]]",
+      "links": [
+        {
+          "name": "this",
+          "link": "this",
+          "pid": "24"
+        }
+      ],
+      "name": "to",
+      "pid": "23",
+      "position": {
+        "x": "1264",
+        "y": "1481"
+      }
+    },
+    {
+      "text": "[[drive.]]",
+      "links": [
+        {
+          "name": "drive.",
+          "link": "drive.",
+          "pid": "25"
+        }
+      ],
+      "name": "this",
+      "pid": "24",
+      "position": {
+        "x": "1414",
+        "y": "1475"
+      }
+    },
+    {
+      "text": "[[You->dialogue1_you]]",
+      "links": [
+        {
+          "name": "You",
+          "link": "dialogue1_you",
+          "pid": "26"
+        }
+      ],
+      "name": "drive.",
+      "pid": "25",
+      "position": {
+        "x": "1414",
+        "y": "1625"
+      }
+    },
+    {
+      "text": "[[know->dialogue1_know]]",
+      "links": [
+        {
+          "name": "know",
+          "link": "dialogue1_know",
+          "pid": "27"
+        }
+      ],
+      "name": "dialogue1_you",
+      "pid": "26",
+      "position": {
+        "x": "1414",
+        "y": "1775"
+      }
+    },
+    {
+      "text": "[[I->dialogue1_I]]",
+      "links": [
+        {
+          "name": "I",
+          "link": "dialogue1_I",
+          "pid": "28"
+        }
+      ],
+      "name": "dialogue1_know",
+      "pid": "27",
+      "position": {
+        "x": "1414",
+        "y": "1925"
+      }
+    },
+    {
+      "text": "[[was->dialogue1_was]]",
+      "links": [
+        {
+          "name": "was",
+          "link": "dialogue1_was",
+          "pid": "29"
+        }
+      ],
+      "name": "dialogue1_I",
+      "pid": "28",
+      "position": {
+        "x": "1414",
+        "y": "2075"
+      }
+    },
+    {
+      "text": "[[sick.]]",
+      "links": [
+        {
+          "name": "sick.",
+          "link": "sick.",
+          "pid": "30"
+        }
+      ],
+      "name": "dialogue1_was",
+      "pid": "29",
+      "position": {
+        "x": "1414",
+        "y": "2225"
+      }
+    },
+    {
+      "text": "[[My->my_body]]",
+      "links": [
+        {
+          "name": "My",
+          "link": "my_body",
+          "pid": "31"
+        }
+      ],
+      "name": "sick.",
+      "pid": "30",
+      "position": {
+        "x": "1432.3333333333333",
+        "y": "2375"
+      }
+    },
+    {
+      "text": "[[body->body_body]]",
+      "links": [
+        {
+          "name": "body",
+          "link": "body_body",
+          "pid": "32"
+        }
+      ],
+      "name": "my_body",
+      "pid": "31",
+      "position": {
+        "x": "1432.3333333333333",
+        "y": "2525"
+      }
+    },
+    {
+      "text": "[[had->had_body]]",
+      "links": [
+        {
+          "name": "had",
+          "link": "had_body",
+          "pid": "33"
+        }
+      ],
+      "name": "body_body",
+      "pid": "32",
+      "position": {
+        "x": "1432.3333333333333",
+        "y": "2675"
+      }
+    },
+    {
+      "text": "[[to->to_body]]",
+      "links": [
+        {
+          "name": "to",
+          "link": "to_body",
+          "pid": "34"
+        }
+      ],
+      "name": "had_body",
+      "pid": "33",
+      "position": {
+        "x": "1432.3333333333333",
+        "y": "2825"
+      }
+    },
+    {
+      "text": "[[die.->body_die]]",
+      "links": [
+        {
+          "name": "die.",
+          "link": "body_die",
+          "pid": "35"
+        }
+      ],
+      "name": "to_body",
+      "pid": "34",
+      "position": {
+        "x": "1432.3333333333333",
+        "y": "2975"
+      }
+    },
+    {
+      "text": "[[But now->demand_now]]",
+      "links": [
+        {
+          "name": "But now",
+          "link": "demand_now",
+          "pid": "36"
+        }
+      ],
+      "name": "body_die",
+      "pid": "35",
+      "position": {
+        "x": "1432.3333333333333",
+        "y": "3125"
+      }
+    },
+    {
+      "text": "[[I seem to be stuck here.->demand_stuck]]",
+      "links": [
+        {
+          "name": "I seem to be stuck here.",
+          "link": "demand_stuck",
+          "pid": "37"
+        }
+      ],
+      "name": "demand_now",
+      "pid": "36",
+      "position": {
+        "x": "1432.3333333333333",
+        "y": "3425"
+      }
+    },
+    {
+      "text": "[[Please help me->demand_please]]",
+      "links": [
+        {
+          "name": "Please help me",
+          "link": "demand_please",
+          "pid": "38"
+        }
+      ],
+      "name": "demand_stuck",
+      "pid": "37",
+      "position": {
+        "x": "1432.3333333333333",
+        "y": "3575"
+      }
+    },
+    {
+      "text": "[[get out.->demand_out]]",
+      "links": [
+        {
+          "name": "get out.",
+          "link": "demand_out",
+          "pid": "39"
+        }
+      ],
+      "name": "demand_please",
+      "pid": "38",
+      "position": {
+        "x": "1400.6666666666665",
+        "y": "3720"
+      }
+    },
+    {
+      "text": "[[howto->demand_how]]",
+      "links": [
+        {
+          "name": "howto",
+          "link": "demand_how",
+          "pid": "40"
+        }
+      ],
+      "name": "demand_out",
+      "pid": "39",
+      "position": {
+        "x": "1384",
+        "y": "3846.6666666666665"
+      }
+    },
+    {
+      "text": "Double-click this passage to edit it.",
+      "name": "demand_how",
+      "pid": "40",
+      "position": {
+        "x": "1384",
+        "y": "3996.6666666666665"
+      },
+      "tags": [
+        "text"
+      ]
     }
   ],
   "name": "spoopy directory",

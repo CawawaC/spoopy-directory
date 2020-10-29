@@ -12,6 +12,10 @@ var current_passage_type setget , get_current_passage_type
 func import():
 	var content = open()
 	twine = parse_json(content)
+	if twine == null:
+		push_error("Could not import json: " + file_path)
+		return
+	
 	passages = twine.passages
 	current_passage = get_starting_passage()
 
@@ -44,6 +48,9 @@ func get_passage_type_width_pid(pid):
 	return get_passage_type(p)
 
 func get_passage_type(passage):
+	if passage == null:
+		return null
+	
 	if not passage.has("tags"):
 		return FileType.DIRECTORY
 	
@@ -54,3 +61,9 @@ func get_passage_type(passage):
 
 func get_current_passage_type():
 	return get_passage_type(current_passage)
+
+func get_next_passage():
+	if current_passage.has("links"):
+		var pid = current_passage.links[0].pid
+		return get_passage_with_pid(pid)
+	return null

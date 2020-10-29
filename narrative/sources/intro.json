@@ -1,0 +1,66 @@
+{
+  "passages": [
+    {
+      "text": "Your grandfather was found dead. Suicide.\n\n[[intro 2]]",
+      "links": [
+        {
+          "name": "intro 2",
+          "link": "intro 2",
+          "pid": "2"
+        }
+      ],
+      "name": "intro 1",
+      "pid": "1",
+      "position": {
+        "x": "656.3333333333333",
+        "y": "62.00000000000006"
+      }
+    },
+    {
+      "text": "He was found hooked to his computer, with a bullet in the head and a gun in his hand.\n\n\n[[intro 3]]",
+      "links": [
+        {
+          "name": "intro 3",
+          "link": "intro 3",
+          "pid": "3"
+        }
+      ],
+      "name": "intro 2",
+      "pid": "2",
+      "position": {
+        "x": "816",
+        "y": "58.666666666666714"
+      }
+    },
+    {
+      "text": "You were very close. He was a computer engineer. He taught you everything.\n\n[[intro 4]]",
+      "links": [
+        {
+          "name": "intro 4",
+          "link": "intro 4",
+          "pid": "4"
+        }
+      ],
+      "name": "intro 3",
+      "pid": "3",
+      "position": {
+        "x": "967.6666666666667",
+        "y": "60.00000000000003"
+      }
+    },
+    {
+      "text": "Months later, his possesssions have been released. You manage to get your hands on the drive your grandpa was probably working with when he died. \n\nYou try to understand: why did he kill himself?",
+      "name": "intro 4",
+      "pid": "4",
+      "position": {
+        "x": "1124.6666666666667",
+        "y": "63.00000000000003"
+      }
+    }
+  ],
+  "name": "spoopy directory - intro",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.9",
+  "ifid": "77013747-D566-4879-BA62-B864A9901601"
+}

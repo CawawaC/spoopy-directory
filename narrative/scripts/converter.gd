@@ -2,6 +2,12 @@ extends Node
 
 export (String, MULTILINE) var test_text
 
+func clean_up(text):
+	text = replace_strings(text)
+	text = remove_signal_blocks(text)
+	text = remove_response_blocks(text)
+	return text
+
 func replace_strings(text):
 	text = text.replace("==player==", Config.player_name)
 	return text
@@ -23,6 +29,13 @@ func remove_signal_blocks(text):
 	var result = get_signals(text)
 	for r in result:
 		text = text.replace(r.strings[0], "")
+	return text
+
+func remove_response_blocks(text):
+	var regex = RegEx.new()
+	regex.compile("\\[\\[(.+)\\]\\]")
+	var result = regex.sub(text, "")
+	return result
 	return text
 
 func test():

@@ -12,7 +12,7 @@ func _ready():
 	connect("opened", get_parent(), "on_dir_opened")
 
 func open():
-	emit_signal("opened", pid)
+	emit_signal("opened", pid, file_name)
 
 func set_dir_name(value):
 	file_name = value

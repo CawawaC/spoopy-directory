@@ -18,6 +18,8 @@ func set_text(value):
 	popup.text = value
 
 func set_file_name(value):
+	print("set text file name: ", value)
 	file_name = value
 	label.text = value
+	popup.file_name = value
 

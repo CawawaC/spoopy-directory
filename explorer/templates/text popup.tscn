@@ -13,7 +13,6 @@ content_margin_top = 15.0
 content_margin_bottom = 15.0
 
 [node name="popup" type="Popup"]
-visible = true
 margin_left = 41.6964
 margin_top = 76.4043
 margin_right = 448.696

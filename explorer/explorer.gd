@@ -19,7 +19,7 @@ func go_to_parent_directory():
 		return
 	
 	grid.go_to_dir(parent_dir.pid)
-	current_folder.text = parent_dir.name	
+	current_folder.text = parent_dir.name
 	directory_history.pop_back()
 
 func on_parent_pressed():
