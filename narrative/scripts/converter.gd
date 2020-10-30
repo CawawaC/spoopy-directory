@@ -47,3 +47,18 @@ func test():
 	var signals = get_signal_blocks(test_text)
 	for s in signals:
 		emit_signal(s)
+
+func is_condition_true(tags):
+	for t in tags:
+		if t.begins_with("if:"):
+			var condition = t.substr(3)
+			var b = Config.get(condition)
+			return b
+	return true
+
+func get_conditions(tags):
+	for t in tags:
+		if t.begins_with("if:"):
+			var condition = t.substr(3)
+			var b = Config.get(condition)
+			print(b)
