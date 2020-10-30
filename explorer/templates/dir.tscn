@@ -7,7 +7,7 @@
 [ext_resource path="res://explorer/templates/filename.gd" type="Script" id=5]
 
 [node name="dir" type="Control"]
-margin_right = 120.0
+margin_right = 163.0
 margin_bottom = 133.0
 rect_min_size = Vector2( 120, 133 )
 mouse_default_cursor_shape = 2
@@ -29,14 +29,14 @@ __meta__ = {
 
 [node name="icon" type="TextureRect" parent="vbox"]
 modulate = Color( 0.772549, 0.94902, 0.976471, 1 )
-margin_right = 120.0
+margin_right = 163.0
 margin_bottom = 54.0
 texture = ExtResource( 1 )
 stretch_mode = 4
 
 [node name="label" type="Label" parent="vbox"]
 margin_top = 58.0
-margin_right = 120.0
+margin_right = 163.0
 margin_bottom = 81.0
 text = "dir name"
 align = 1
@@ -45,6 +45,8 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+progressive = false
+progressive_sequence = [ "Thanks.", "I feel much better now.", "Now please leave." ]
 
 [node name="click area" type="TextureButton" parent="."]
 anchor_right = 1.0

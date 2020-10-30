@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "SpoopyDirectory",
+"language": "GDScript",
+"path": "res://explorer/data/elements/dir.gd"
+}, {
+"base": "Node",
+"class": "SpoopyShortcut",
+"language": "GDScript",
+"path": "res://explorer/data/elements/spoopy shortcut.gd"
+}, {
+"base": "Node",
+"class": "SpoopyText",
+"language": "GDScript",
+"path": "res://explorer/data/elements/spoopy text.gd"
+} ]
 _global_script_class_icons={
-
+"SpoopyDirectory": "",
+"SpoopyShortcut": "",
+"SpoopyText": ""
 }
 
 [application]

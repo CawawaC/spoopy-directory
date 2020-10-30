@@ -22,3 +22,9 @@ func on_titles_intro_ended():
 	explorer_root.modulate.a = 1
 	titles.modulate.a = 0
 	titles.hide()
+
+func ask_for_password():
+	pass
+
+func on_player_password_entered(text):
+	Config.player_name = text

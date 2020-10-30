@@ -1,6 +1,6 @@
 extends Node
 
-enum FileType { DIRECTORY, TEXT }
+enum FileType { DIRECTORY, TEXT, DIRECTORY_PASSWORD }
 
 export (String) var file_path
 
@@ -56,6 +56,8 @@ func get_passage_type(passage):
 	
 	if passage.tags.has("text"):
 		return FileType.TEXT
+	elif passage.tags.has("password"):
+		return FileType.DIRECTORY_PASSWORD
 	else:
 		return FileType.DIRECTORY
 

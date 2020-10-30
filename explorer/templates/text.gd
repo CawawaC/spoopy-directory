@@ -8,6 +8,7 @@ var file_name setget set_file_name
 var text setget set_text
 var pid 
 var calls
+var passage
 
 func open():
 	popup.popup()

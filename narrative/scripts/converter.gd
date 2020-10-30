@@ -10,6 +10,7 @@ func clean_up(text):
 
 func replace_strings(text):
 	text = text.replace("==player==", Config.player_name)
+	text = text.replace("==player_short==", Config.player_name_short)
 	return text
 
 func get_signals(text):
@@ -37,6 +38,10 @@ func remove_response_blocks(text):
 	var result = regex.sub(text, "")
 	return result
 	return text
+
+func get_progressive_sequence(text):
+	var a = text.split("___\n")
+	return a
 
 func test():
 	var signals = get_signal_blocks(test_text)

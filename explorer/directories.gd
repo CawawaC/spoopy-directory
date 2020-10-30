@@ -2,6 +2,7 @@ extends Control
 
 export (PackedScene) var directory_template
 export (PackedScene) var text_file_template
+export (PackedScene) var directory_password
 
 onready var importer = $"../../../../importer"
 onready var converter = $"../../../../converter"
@@ -31,10 +32,17 @@ func add_file(pid):
 			file.pid = pid
 			add_child(file)
 		
+		importer.FileType.DIRECTORY_PASSWORD:
+			file = directory_password.instance()
+			file.pid = pid
+			file.connect("ask_for_password", self, "directory_password_entered")
+			add_child(file)
+		
 		importer.FileType.TEXT:
 			file = text_file_template.instance()
 			file.pid = pid
 			add_child(file)
+			
 			
 			var text = importer.get_passage_with_pid(pid).text
 			file.calls = converter.get_signal_blocks(text)
@@ -42,8 +50,14 @@ func add_file(pid):
 			text = converter.replace_strings(text)
 			file.text = text
 	
-	if passage.has("tags") and passage.tags.has("hidden"):
-		file.hide()
+	file.passage = passage
+	
+	if passage.has("tags"):
+		if passage.tags.has("hidden"):
+			file.hide()
+		if passage.tags.has("dynamic"):
+			var strings = converter.get_progressive_sequence(passage.text)
+			file.set_dynamic(true, strings)
 	
 	return file
 
@@ -67,3 +81,6 @@ func go_to_dir(pid):
 func clear():
 	for c in get_children():
 		c.queue_free()
+
+func directory_password_entered(text, valid):
+	print("password entered: ", text, ". Valid: ", valid)

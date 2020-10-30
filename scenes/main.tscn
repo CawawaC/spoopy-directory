@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://narrative/scripts/twine importer.gd" type="Script" id=1]
 [ext_resource path="res://explorer/explorer.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://main.gd" type="Script" id=9]
 [ext_resource path="res://assets/graph/foreground.png" type="Texture" id=10]
 [ext_resource path="res://scenes/titles.tscn" type="PackedScene" id=11]
+[ext_resource path="res://explorer/themeing/CRT shader/crt shader.tscn" type="PackedScene" id=12]
+[ext_resource path="res://explorer/templates/dir password protected.tscn" type="PackedScene" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.180392, 0.184314, 0.207843, 1 )
@@ -18,6 +20,8 @@ bg_color = Color( 0.180392, 0.184314, 0.207843, 1 )
 [node name="main" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
 theme = ExtResource( 7 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 9 )
@@ -131,9 +135,12 @@ __meta__ = {
 }
 directory_template = ExtResource( 3 )
 text_file_template = ExtResource( 4 )
+directory_password = ExtResource( 13 )
 
 [node name="titles" parent="." instance=ExtResource( 11 )]
+margin_left = 9.0
 margin_top = 88.0
+margin_right = -8.0
 margin_bottom = -88.0
 
 [node name="foreground" type="TextureRect" parent="."]
@@ -144,9 +151,13 @@ texture = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="crt shader" parent="." instance=ExtResource( 12 )]
 [connection signal="ready" from="." to="margin/explorer/scroll/grid" method="init"]
 [connection signal="pressed" from="converter/Button" to="converter" method="test"]
 [connection signal="pressed" from="close" to="." method="on_close_pressed"]
 [connection signal="pressed" from="margin/explorer/parent" to="margin/explorer" method="on_parent_pressed"]
 [connection signal="dir_opened" from="margin/explorer/scroll/grid" to="margin/explorer" method="on_grid_dir_opened"]
 [connection signal="intro_ended" from="titles" to="." method="on_titles_intro_ended"]
+
+[editable path="crt shader"]
