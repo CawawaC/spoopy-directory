@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://explorer/templates/file types/dir.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/graph/icon_exe_white.png" type="Texture" id=2]
+[ext_resource path="res://explorer/templates/executable.gd" type="Script" id=3]
+
+[node name="exe" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="icon" parent="vbox" index="0"]
+texture = ExtResource( 2 )

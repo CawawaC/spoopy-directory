@@ -16,16 +16,17 @@ signal password_entered
 signal ask_for_password
 
 func _ready():
-	connect("opened", get_parent(), "on_dir_opened")
+	connect("opened", get_parent(), "on_executable_executed")
 
 func open():
+	for c in calls:
+		actions.call(c)
+	
 	if password_locked:
 		emit_signal("ask_for_password")
 	else:
 		emit_signal("opened", pid, file_name)
 	
-	for c in calls:
-		actions.call(c)
 
 func set_dir_name(value):
 	file_name = value

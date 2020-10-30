@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://narrative/scripts/twine importer.gd" type="Script" id=1]
 [ext_resource path="res://explorer/explorer.gd" type="Script" id=2]
-[ext_resource path="res://explorer/templates/dir.tscn" type="PackedScene" id=3]
-[ext_resource path="res://explorer/templates/text.tscn" type="PackedScene" id=4]
+[ext_resource path="res://explorer/templates/file types/dir.tscn" type="PackedScene" id=3]
+[ext_resource path="res://explorer/templates/file types/text.tscn" type="PackedScene" id=4]
 [ext_resource path="res://narrative/scripts/converter.gd" type="Script" id=5]
 [ext_resource path="res://references/spoopy_dir_marges.png" type="Texture" id=6]
 [ext_resource path="res://explorer/themeing/explorer.theme.tres" type="Theme" id=7]
@@ -12,7 +12,8 @@
 [ext_resource path="res://assets/graph/foreground.png" type="Texture" id=10]
 [ext_resource path="res://scenes/titles.tscn" type="PackedScene" id=11]
 [ext_resource path="res://explorer/themeing/CRT shader/crt shader.tscn" type="PackedScene" id=12]
-[ext_resource path="res://explorer/templates/dir password protected.tscn" type="PackedScene" id=13]
+[ext_resource path="res://explorer/templates/elements/dir password protected.tscn" type="PackedScene" id=13]
+[ext_resource path="res://explorer/templates/file types/exe.tscn" type="PackedScene" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.180392, 0.184314, 0.207843, 1 )
@@ -136,6 +137,7 @@ __meta__ = {
 directory_template = ExtResource( 3 )
 text_file_template = ExtResource( 4 )
 directory_password = ExtResource( 13 )
+executable_tempalte = ExtResource( 14 )
 
 [node name="titles" parent="." instance=ExtResource( 11 )]
 margin_left = 9.0
@@ -146,6 +148,8 @@ margin_bottom = -88.0
 [node name="foreground" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = 2.0
 mouse_filter = 2
 texture = ExtResource( 10 )
 __meta__ = {
@@ -153,6 +157,9 @@ __meta__ = {
 }
 
 [node name="crt shader" parent="." instance=ExtResource( 12 )]
+
+[node name="crt shader" parent="crt shader" index="0"]
+visible = true
 [connection signal="ready" from="." to="margin/explorer/scroll/grid" method="init"]
 [connection signal="pressed" from="converter/Button" to="converter" method="test"]
 [connection signal="pressed" from="close" to="." method="on_close_pressed"]

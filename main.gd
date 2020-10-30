@@ -12,7 +12,6 @@ func _ready():
 		titles.hide()
 
 func quit():
-	print("quit")
 	get_tree().quit()
 
 func on_close_pressed():

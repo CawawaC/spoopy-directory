@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "[[logs->archives]]\n[[project information]]\n\n[[==player_short==?]]\n\n[[here it is!->here_key1]]\n\n[[thanks]] ",
+      "text": "[[logs->archives]]\n[[project information]]\n\n[[==player_short==?]]\n\n\n",
       "links": [
         {
           "name": "logs",
@@ -17,16 +17,6 @@
           "name": "==player_short==?",
           "link": "==player_short==?",
           "pid": "12"
-        },
-        {
-          "name": "here it is!",
-          "link": "here_key1",
-          "pid": "41"
-        },
-        {
-          "name": "thanks",
-          "link": "thanks",
-          "pid": "46"
         }
       ],
       "name": "dir",
@@ -583,7 +573,7 @@
       }
     },
     {
-      "text": "[[howto->demand_how]]\n[[I'll take you back->dir]]",
+      "text": "[[howto->demand_how]]\n[[here it is!->here_key1]]",
       "links": [
         {
           "name": "howto",
@@ -591,9 +581,9 @@
           "pid": "38"
         },
         {
-          "name": "I'll take you back",
-          "link": "dir",
-          "pid": "1"
+          "name": "here it is!",
+          "link": "here_key1",
+          "pid": "41"
         }
       ],
       "name": "demand_out",
@@ -649,7 +639,7 @@
       }
     },
     {
-      "text": "[[Now open it->open_key1]]\n[[Key1.exe]] ",
+      "text": "[[Now open it->open_key1]]\n[[Key1.exe]] \n[[thanks]] ",
       "links": [
         {
           "name": "Now open it",
@@ -660,6 +650,11 @@
           "name": "Key1.exe",
           "link": "Key1.exe",
           "pid": "43"
+        },
+        {
+          "name": "thanks",
+          "link": "thanks",
+          "pid": "46"
         }
       ],
       "name": "here_key1",
@@ -670,7 +665,7 @@
       }
     },
     {
-      "text": "[[What are you waiting for?->waiting_key1]]\n[[Key1.exe]] ",
+      "text": "[[What are you waiting for?->waiting_key1]]\n[[Key1.exe]] \n[[thanks]] ",
       "links": [
         {
           "name": "What are you waiting for?",
@@ -681,6 +676,11 @@
           "name": "Key1.exe",
           "link": "Key1.exe",
           "pid": "43"
+        },
+        {
+          "name": "thanks",
+          "link": "thanks",
+          "pid": "46"
         }
       ],
       "name": "open_key1",
@@ -688,19 +688,25 @@
       "position": {
         "x": "1528",
         "y": "705"
-      }
+      },
+      "tags": [
+        "if:key1_not_opened"
+      ]
     },
     {
-      "text": "Double-click this passage to edit it.",
+      "text": "++key1_opened++",
       "name": "Key1.exe",
       "pid": "43",
       "position": {
         "x": "1613",
-        "y": "905"
-      }
+        "y": "903.3333333333334"
+      },
+      "tags": [
+        "executable"
+      ]
     },
     {
-      "text": "[[OPEN IT!!! NOW!]]\n[[Key1.exe]] ",
+      "text": "[[OPEN IT!!! NOW!]]\n[[Key1.exe]] \n[[thanks]] ",
       "links": [
         {
           "name": "OPEN IT!!! NOW!",
@@ -711,6 +717,11 @@
           "name": "Key1.exe",
           "link": "Key1.exe",
           "pid": "43"
+        },
+        {
+          "name": "thanks",
+          "link": "thanks",
+          "pid": "46"
         }
       ],
       "name": "waiting_key1",
@@ -718,15 +729,23 @@
       "position": {
         "x": "1695",
         "y": "711"
-      }
+      },
+      "tags": [
+        "if:key1_not_opened"
+      ]
     },
     {
-      "text": "[[Key1.exe]]",
+      "text": "[[Key1.exe]]\n[[thanks]] ",
       "links": [
         {
           "name": "Key1.exe",
           "link": "Key1.exe",
           "pid": "43"
+        },
+        {
+          "name": "thanks",
+          "link": "thanks",
+          "pid": "46"
         }
       ],
       "name": "OPEN IT!!! NOW!",
@@ -734,18 +753,22 @@
       "position": {
         "x": "1869",
         "y": "713"
-      }
+      },
+      "tags": [
+        "if:key1_not_opened"
+      ]
     },
     {
       "text": "Thanks, kid.\n___\nI feel much better now.\n___\nNow, please keep looking for the next executable.\n___\nChop, chop.",
       "name": "thanks",
       "pid": "46",
       "position": {
-        "x": "276.33333333333326",
-        "y": "921.3333333333333"
+        "x": "1613.0000000000002",
+        "y": "509.66666666666674"
       },
       "tags": [
-        "dynamic"
+        "dynamic",
+        "if:key1_opened"
       ]
     },
     {
@@ -791,7 +814,7 @@
     }
   ],
   "name": "spoopy directory",
-  "startnode": "40",
+  "startnode": "41",
   "creator": "Twine",
   "creator-version": "2.3.9",
   "ifid": "4BA1B92D-A173-4FFF-ABBE-E33AD0481D54"
