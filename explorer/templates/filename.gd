@@ -6,7 +6,7 @@ var t = 0
 
 export var progressive = true
 export (Array, String) var progressive_sequence
-var progressive_period = 3
+var progressive_period = 2.5
 var progressive_t = 0
 var progressive_i = 0
 

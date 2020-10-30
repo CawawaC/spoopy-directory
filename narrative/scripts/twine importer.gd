@@ -71,3 +71,9 @@ func get_next_passage():
 		var pid = current_passage.links[0].pid
 		return get_passage_with_pid(pid)
 	return null
+
+func passage_has_tag(passage, tag):
+	if passage.has("tags"):
+		if passage.tags.has(tag):
+			return true
+	return false

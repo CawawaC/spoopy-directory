@@ -27,12 +27,15 @@ func add_file(pid):
 	var passage = importer.get_passage_with_pid(pid)
 	var file
 	
-	
 	match type:
 		importer.FileType.DIRECTORY:
 			file = directory_template.instance()
 			file.pid = pid
+			passage.text = converter.clean_up(passage.text)
 			add_child(file)
+			
+			if importer.passage_has_tag(passage, "safe"):
+				file.modulate = Color.green
 		
 		importer.FileType.EXECUTABLE:
 			file = executable_tempalte.instance()
@@ -61,7 +64,7 @@ func add_file(pid):
 	
 	file.passage = passage
 	
-	if not converter.is_condition_true(passage.tags):
+	if passage.has("tags") and not converter.is_condition_true(passage.tags):
 		file.hide()
 	
 	if passage.has("tags"):
